@@ -7,7 +7,12 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import{ClienteService} from './cliente/cliente.service';
+import {Routes, RouterModule} from '@angular/router';
 
+const routes:Routes=[
+  {path: '',redirectTo:'/cliente',pathMatch:'full'},
+  {path:'cliente',component:ClienteComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +21,7 @@ import{ClienteService} from './cliente/cliente.service';
     FooterComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule
   ],
